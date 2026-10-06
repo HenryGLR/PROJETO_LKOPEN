@@ -688,14 +688,23 @@
   display: grid;
   min-height: 82px;
   padding: 1rem 0;
-  grid-template-columns: 2.5rem 1fr;
+  grid-template-columns: 2.5rem 1fr auto;
   gap: 1rem;
   align-items: center;
   border-bottom: 1px solid rgba(14, 14, 14, 0.25);
   color: var(--black);
+  text-decoration: none;
+  transition: padding 220ms ease, background 220ms ease;
 }
 
-.third-registration__categories span {
+.third-registration__category:hover {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.third-registration__categories span,
+.third-registration__categories small {
   font-size: 0.62rem;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -713,13 +722,6 @@
   color: #48443f;
   font-size: 0.78rem;
   line-height: 1.6;
-}
-
-.third-registration__disabled {
-  width: max-content;
-  margin-top: 1.5rem;
-  cursor: not-allowed;
-  opacity: 0.58;
 }
 
 @keyframes second-hero-image {
@@ -879,6 +881,10 @@
 
   .third-registration__category {
     grid-template-columns: 2rem 1fr;
+  }
+
+  .third-registration__category small {
+    grid-column: 2;
   }
 }
 

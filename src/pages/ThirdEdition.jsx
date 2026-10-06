@@ -6,12 +6,36 @@ import '../styles/experience.css'
 import '../styles/second-edition.css'
 
 const thirdEditionCategories = [
-  { number: '01', title: 'Masculino Estreante' },
-  { number: '02', title: 'Misto Estreante' },
-  { number: '03', title: 'Masculino Iniciante' },
-  { number: '04', title: 'Misto Iniciante' },
-  { number: '05', title: 'Feminino Iniciante + C' },
-  { number: '06', title: 'Amador B + C' },
+  {
+    number: '01',
+    title: 'Masculino Estreante',
+    form: 'https://docs.google.com/forms/d/e/1FAIpQLSd4wnBdBqTy3aWaGP-kiCyvg3UjgX9PwWrgzSeMt-RgtXKVGA/viewform',
+  },
+  {
+    number: '02',
+    title: 'Misto Estreante',
+    form: 'https://docs.google.com/forms/d/e/1FAIpQLSdHGPLID1ttc7lecAgsjzcKlY-aZqiBI0hqBaOgd8AYbiCcCw/viewform',
+  },
+  {
+    number: '03',
+    title: 'Masculino Iniciante',
+    form: 'https://docs.google.com/forms/d/e/1FAIpQLSfn0Gg1zo2KgFBEToiYjKBJvUzy1Xg40yL28wix3eaTjV59Ng/viewform',
+  },
+  {
+    number: '04',
+    title: 'Misto Iniciante',
+    form: 'https://docs.google.com/forms/d/e/1FAIpQLScHKIYs0-BPM5_RHJxFRDUXEc4rcppD5FAM_eaSYw6O-QIUIA/viewform',
+  },
+  {
+    number: '05',
+    title: 'Feminino Iniciante + C',
+    form: 'https://docs.google.com/forms/d/e/1FAIpQLSdzLdAqXYQ68WLWaiL_kZwVdVsv3X2-ImouHzdeHHb895DOhg/viewform',
+  },
+  {
+    number: '06',
+    title: 'Masculino B + C',
+    form: 'https://docs.google.com/forms/d/e/1FAIpQLSen4roIcnrlKNmKQwJXkrzGqGIcLMPiSsYoX8B1dYNuQtAImg/viewform',
+  },
 ]
 
 function ThirdEdition() {
@@ -38,7 +62,7 @@ function ThirdEdition() {
             <strong>12 e 13</strong>
             <span>de dezembro</span>
           </div>
-          <p>Esta será a central oficial para escolher sua categoria e iniciar a inscrição quando o formulário for liberado.</p>
+          <p>Escolha sua categoria e abra o formulário oficial para garantir sua participação na terceira edição.</p>
           <a className="third-edition__jump" href="#inscricoes">Quero me inscrever <span aria-hidden="true">↓</span></a>
         </div>
 
@@ -49,15 +73,19 @@ function ThirdEdition() {
           </div>
           <div className="third-registration__categories">
             {thirdEditionCategories.map((category) => (
-              <div className="third-registration__category" key={category.title}>
+              <a
+                className="third-registration__category"
+                href={category.form}
+                target="_blank"
+                rel="noreferrer"
+                key={category.title}
+              >
                 <span>{category.number}</span>
                 <strong>{category.title}</strong>
-              </div>
+                <small>Inscreva-se ↗</small>
+              </a>
             ))}
-            <p>Uma única inscrição dará acesso à escolha da categoria no formulário oficial.</p>
-            <span className="button third-registration__disabled" aria-disabled="true">
-              Link de inscrição em breve
-            </span>
+            <p>Escolha sua categoria para abrir o formulário oficial de inscrição.</p>
           </div>
         </section>
       </main>
