@@ -1,0 +1,70 @@
+.not-found {
+  display: flex;
+  min-height: 100svh;
+  padding: 9rem clamp(1.25rem, 8vw, 8rem) 5rem;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  background: radial-gradient(circle at 80% 30%, #292929, transparent 27%), var(--black);
+}
+
+.not-found > .brand-logo {
+  position: absolute;
+  right: 8vw;
+  width: min(28vw, 340px);
+  opacity: 0.16;
+  transform: rotate(8deg);
+}
+
+.not-found > .brand-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.not-found > .brand-logo .brand-logo__name {
+  display: none;
+}
+
+.not-found > p {
+  margin: 0 0 1.2rem;
+  color: var(--beige);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.not-found h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: clamp(4.8rem, 11vw, 11rem);
+  letter-spacing: -0.035em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.not-found > span {
+  max-width: 34rem;
+  margin-top: 2rem;
+  color: #aaa;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.not-found > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 650px) {
+  .not-found > .brand-logo {
+    top: 8rem;
+    right: -2rem;
+    width: 55vw;
+  }
+}

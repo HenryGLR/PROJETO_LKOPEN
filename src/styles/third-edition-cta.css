@@ -1,0 +1,67 @@
+.third-edition-cta {
+  position: relative;
+  display: grid;
+  min-height: 560px;
+  padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 6vw, 6.5rem);
+  overflow: hidden;
+  align-items: end;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  color: #fff;
+  background: var(--black);
+  isolation: isolate;
+}
+
+.third-edition-cta__number {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: -0.02em;
+  color: transparent;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: min(45vw, 34rem);
+  line-height: 0.75;
+  transform: translateY(-50%);
+  -webkit-text-stroke: 1px rgba(232, 219, 194, 0.22);
+}
+
+.third-edition-cta h2 {
+  max-width: 10ch;
+  margin: 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: clamp(4rem, 8vw, 8rem);
+  letter-spacing: -0.035em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.third-edition-cta__action {
+  position: relative;
+  z-index: 1;
+  max-width: 30rem;
+}
+
+.third-edition-cta__action p {
+  margin: 0 0 2rem;
+  color: #bdbdbd;
+  line-height: 1.7;
+}
+
+.third-edition-cta .button {
+  color: var(--black);
+  background: var(--beige);
+}
+
+@media (max-width: 760px) {
+  .third-edition-cta {
+    min-height: 650px;
+    align-content: center;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .third-edition-cta__number {
+    top: 20%;
+    font-size: 17rem;
+  }
+}

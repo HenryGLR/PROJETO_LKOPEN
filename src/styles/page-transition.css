@@ -1,0 +1,136 @@
+.page-transition {
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+  background: var(--black);
+  pointer-events: none;
+  transform: translateY(0);
+  transition: transform 780ms var(--ease-out);
+}
+
+.page-transition--ready {
+  transform: translateY(-101%);
+}
+
+.page-transition--leaving {
+  transform: translateY(0);
+  transition-duration: 620ms;
+}
+
+.page-transition::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 8px;
+  background: var(--beige);
+  content: '';
+}
+
+.page-transition__pulse {
+  position: absolute;
+  top: var(--click-y);
+  left: var(--click-x);
+  width: 12vmax;
+  height: 12vmax;
+  background: var(--beige);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 720ms var(--ease-out), opacity 150ms ease;
+}
+
+.page-transition--leaving .page-transition__pulse {
+  opacity: 0.12;
+  transform: translate(-50%, -50%) scale(18);
+}
+
+.page-transition__brand {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 220ms ease, transform 400ms var(--ease-out);
+}
+
+.page-transition--ready .page-transition__brand {
+  opacity: 0;
+  transform: translateY(-18px);
+}
+
+.page-transition--leaving .page-transition__brand {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 240ms;
+}
+
+.page-transition__brand .brand-logo {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.page-transition__brand .brand-logo img {
+  width: clamp(100px, 13vw, 160px);
+  height: auto;
+}
+
+.page-transition__brand .brand-logo__name {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  letter-spacing: 0.08em;
+}
+
+.page-transition > small {
+  position: absolute;
+  z-index: 2;
+  bottom: 2.4rem;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  opacity: 0.55;
+  text-transform: uppercase;
+}
+
+.is-page-leaving {
+  cursor: wait;
+  pointer-events: none;
+}
+
+:is(
+  .button,
+  .navbar__sponsor,
+  .edition-entry > a,
+  .edition__photo-card,
+  .plan > a
+) {
+  will-change: transform;
+}
+
+:is(
+  .button,
+  .navbar__sponsor,
+  .edition-entry > a,
+  .edition__photo-card,
+  .plan > a
+):active {
+  transform: scale(0.975);
+  transition-duration: 80ms;
+}
+
+@media (max-width: 760px) {
+  .page-transition__brand .brand-logo img {
+    width: 92px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    display: none;
+  }
+}

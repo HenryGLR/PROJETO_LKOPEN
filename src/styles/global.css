@@ -1,0 +1,119 @@
+:root {
+  color: #111111;
+  background: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --black: #0b0b0b;
+  --ink: #151515;
+  --paper: #f2f2f2;
+  --sand: #b8b8b8;
+  --beige: #b8b8b8;
+  --acid: #ffffff;
+  --blue: #242424;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--paper);
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.brand-logo img {
+  display: block;
+  width: 64px;
+  height: 82px;
+  object-fit: contain;
+}
+
+.brand-logo__name {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand-logo--compact img {
+  width: 38px;
+  height: 48px;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--beige);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--black);
+  background: var(--acid);
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.7rem 1rem;
+  color: var(--black);
+  background: var(--acid);
+  font-weight: 800;
+  text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
