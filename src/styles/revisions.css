@@ -196,12 +196,10 @@
   background: #171717;
 }
 
-.history-story__photo--team {
-  transform: translateY(1.5rem);
-}
-
+.history-story__photo--team,
 .history-story__photo--embrace {
-  transform: translateY(-1.5rem);
+  height: 100%;
+  transform: none;
 }
 
 .history-story__photo--handshake {
